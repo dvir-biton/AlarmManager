@@ -6,9 +6,12 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Button
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
@@ -50,6 +53,7 @@ class MainActivity : ComponentActivity() {
                             Text(text = "Trigger alarm in seconds")
                         }
                     )
+                    Spacer(modifier = Modifier.height(12.dp))
                     OutlinedTextField(
                         value = message,
                         onValueChange = { message = it },
@@ -58,6 +62,7 @@ class MainActivity : ComponentActivity() {
                             Text(text = "Message")
                         }
                     )
+                    Spacer(modifier = Modifier.height(12.dp))
                     Row(
                         modifier = Modifier.fillMaxWidth(),
                         horizontalArrangement = Arrangement.Center
@@ -76,6 +81,7 @@ class MainActivity : ComponentActivity() {
                         ) {
                             Text(text = "Schedule")
                         }
+                        Spacer(modifier = Modifier.width(12.dp))
                         Button(
                             onClick = {
                                 alarmItem?.let(scheduler::cancel)
