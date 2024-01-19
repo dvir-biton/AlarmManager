@@ -72,7 +72,8 @@ class MainActivity : ComponentActivity() {
                                 alarmItem = AlarmItem(
                                     time = LocalDateTime.now()
                                         .plusSeconds(secondsText.toLong()),
-                                    message = message
+                                    message = message,
+                                    title = "Alarm!"
                                 )
                                 alarmItem?.let(scheduler::schedule)
                                 secondsText = ""
